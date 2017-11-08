@@ -16,5 +16,11 @@
     <!--nav_header strings-->
     <string name="company_name">Your Place</string>
 
+    <!--Log in strings-->
+    <string name="username_hint">Username</string>
+    <string name="password_hint">Password</string>
+    <string name="log_in">Log in</string>
+
     <string name="action_settings">Settings</string>
+    <string name="title_activity_login">LoginActivity</string>
 </resources>
