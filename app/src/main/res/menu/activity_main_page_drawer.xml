@@ -21,18 +21,11 @@
             android:icon="@drawable/ic_menu_manage"
             android:title="@string/About_us" />
 
-        <item android:title="Communicate">
-                <menu>
-                    <item
-                    android:id="@+id/nav_share"
-                    android:icon="@drawable/ic_menu_share"
-                    android:title="Share" />
-                    <item
-                    android:id="@+id/nav_send"
-                    android:icon="@drawable/ic_menu_send"
-                    android:title="Send" />
-                </menu>
-        </item>
+        <item
+            android:id="@+id/nav_staff"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/Staff" />
+
     </group>
 
 
