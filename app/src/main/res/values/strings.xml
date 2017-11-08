@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">YourPlace</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="comp1_name">Your</string>
+    <string name="comp2_name">Place</string>
+
+    <!--Button Strings-->
+    <string name="book_appointment">Book Appointment</string>
+    <string name="contact_us">Contact us</string>
+    <string name="Price">Price</string>
+    <string name="About_us">About us</string>
+
+    <!--nav_header strings-->
+    <string name="company_name">Your Place</string>
+
+    <string name="action_settings">Settings</string>
+</resources>
