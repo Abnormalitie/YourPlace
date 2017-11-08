@@ -6,10 +6,11 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_book"
+            android:icon="@drawable/book_filled"
             android:title="@string/book_appointment" />
         <item
             android:id="@+id/nav_price"
-            android:icon="@drawable/icons8-price"
+            android:icon="@drawable/price"
             android:title="@string/Price" />
         <item
             android:id="@+id/nav_contact"
