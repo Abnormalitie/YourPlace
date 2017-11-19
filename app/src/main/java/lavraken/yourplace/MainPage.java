@@ -12,6 +12,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
 public class MainPage extends AppCompatActivity {
 
@@ -22,6 +24,11 @@ public class MainPage extends AppCompatActivity {
         private Fragment fragment1;
 
         private ActionBarDrawerToggle drawerToggle;
+
+        //For LogIn
+        private EditText logInEmailField;
+        private EditText logInPasswordField;
+        private Button logInButton;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
