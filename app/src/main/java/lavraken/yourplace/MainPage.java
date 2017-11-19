@@ -25,11 +25,6 @@ public class MainPage extends AppCompatActivity {
 
         private ActionBarDrawerToggle drawerToggle;
 
-        //For LogIn
-        private EditText logInEmailField;
-        private EditText logInPasswordField;
-        private Button logInButton;
-
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);

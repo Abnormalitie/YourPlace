@@ -16,9 +16,20 @@ import android.widget.EditText;
 
 public class FragmentLogIn extends Fragment {
 
+    //For LogIn
+    public EditText logInEmailField;
+    public EditText logInPasswordField;
+    public Button logInButton;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        setContentView(R.layout.fragment_log_in);
+
+        logInEmailField = (EditText) findViewById(R.id.logInEmail);
+        logInPasswordField = (EditText) findViewById(R.id.logInPassword);
+        logInButton = (Button) findViewById(R.id.LogInButton);
 
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_log_in, container, false);
