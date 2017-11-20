@@ -4,7 +4,9 @@ import android.app.Application;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,18 +32,18 @@ public class FragmentLogIn extends Fragment {
     private Button logInButton;
 
     private FirebaseAuth logInAuth;
+    private View fragment_login;
+
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-
-        setContentView(R.layout.fragment_log_in);
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
         logInAuth = FirebaseAuth.getInstance();
 
-        logInEmailField = (EditText) findViewById(R.id.logInEmail);
-        logInPasswordField = (EditText) findViewById(R.id.logInPassword);
-        logInButton = (Button) findViewById(R.id.LogInButton);
+        logInEmailField = (EditText) view.findViewById(R.id.LogInEmail);
+        logInPasswordField = (EditText) view.findViewById(R.id.LogInPassword);
+        logInButton = (Button) view.findViewById(R.id.LogInButton);
 
         logInButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,6 +52,16 @@ public class FragmentLogIn extends Fragment {
                 startSignIn();
             }
         });
+
+
+
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+
+
 
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_log_in, container, false);
@@ -64,7 +76,9 @@ public class FragmentLogIn extends Fragment {
             public void onComplete(@NonNull Task<AuthResult> task) {
 
                 if(!task.isSuccessful()){
-                    Toast.makeText(MainPage.this, "SignInProblem", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getActivity(), "SignInProblem", Toast.LENGTH_LONG).show();
+
+                    //getContext
                 }
             }
         });
