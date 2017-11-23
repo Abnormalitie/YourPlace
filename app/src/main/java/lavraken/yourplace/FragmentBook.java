@@ -72,7 +72,7 @@ public class FragmentBook extends Fragment {
         bookSubmitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                mConditionRef.setValue("Foggy");
             }
         });
     }
