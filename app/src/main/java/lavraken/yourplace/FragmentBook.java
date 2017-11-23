@@ -3,6 +3,7 @@ package lavraken.yourplace;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,7 +37,7 @@ public class FragmentBook extends Fragment {
 
 
     DatabaseReference mRootReference = FirebaseDatabase.getInstance().getReference();
-    DatabaseReference mConditionRef = mRootReference.child("condition");
+    DatabaseReference mBookingRef = mRootReference.child("User");
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
@@ -64,7 +65,7 @@ public class FragmentBook extends Fragment {
     public void onStart() {
         super.onStart();
 
-        mConditionRef.addValueEventListener(new ValueEventListener() {
+        mBookingRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 //String text = dataSnapshot.getValue(String.class);
@@ -80,14 +81,17 @@ public class FragmentBook extends Fragment {
         bookSubmitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //mConditionRef.setValue("Foggy");
-                //mConditionRef.push().setValue("pushtest");
+
                 String date = bookDayField.getText()+"-"+bookMonthField.getText();
                 String time = bookTimeField.getText().toString();
                 String name = bookNameField.getText().toString();
                 String procedure = bookProcedureField.getText().toString();
 
-                mConditionRef.child(date).child(time).setValue(procedure,name);
+                mBookingRef.child(date).child(time).setValue(procedure,name);
+                //Log.d("TAG", "HEREEEEEEEEEEEEEEEE");
+                //Log.d("TAG", mBookingRef.child("Legio").child("Password").removeValue());
+                //mBookingRef.child("Legio").child("Password").removeValue();
+                //mBookingRef.child("Legio").getKey();
             }
         });
     }

@@ -20,6 +20,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 /**
  * Created by Palle on 18/11/2017.
@@ -35,6 +37,9 @@ public class FragmentLogIn extends Fragment {
 
     private FirebaseAuth logInAuth;
     private View fragment_login;
+
+    DatabaseReference mRootReference = FirebaseDatabase.getInstance().getReference();
+    DatabaseReference mBookingRef = mRootReference.child("User");
 
     private FirebaseAuth.AuthStateListener mAuthListener;
 
@@ -96,17 +101,9 @@ public class FragmentLogIn extends Fragment {
             Toast.makeText(getActivity(), "Please fill all fields", Toast.LENGTH_LONG).show();
             Log.d("ADebugTag", "Value: " + email);
         } else {
-            logInAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                @Override
-                public void onComplete(@NonNull Task<AuthResult> task) {
+            //logInAuth.signInWithEmailAndPassword()
 
-                    if(!task.isSuccessful()){
-                        Toast.makeText(getActivity(), "SignInProblem", Toast.LENGTH_LONG).show();
 
-                        //getContext
-                    }
                 }
-            });
-        }
     }
 }
