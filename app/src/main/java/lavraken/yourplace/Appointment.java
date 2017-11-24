@@ -11,10 +11,9 @@ public class Appointment {
     public Appointment(){
 
     }
-    public Appointment(String date, String time, String rName, String procedure){
+    public Appointment(String date, String time, String procedure){
         this.date = date;
         this.procedure = procedure;
-        this.rName = rName;
         this.time = time;
     }
 
@@ -32,14 +31,6 @@ public class Appointment {
 
     public void setTime(String time) {
         this.time = time;
-    }
-
-    public String getrName() {
-        return rName;
-    }
-
-    public void setrName(String rName) {
-        this.rName = rName;
     }
 
     public String getProcedure() {

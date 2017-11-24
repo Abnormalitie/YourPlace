@@ -33,9 +33,4 @@
         android:layout_alignParentRight="true"
         android:textColor="@color/price" />
 
-    <TextView
-        android:id="@+id/rName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
 </RelativeLayout>

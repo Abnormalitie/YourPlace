@@ -21,7 +21,6 @@ public class AppointmentAdapter extends RecyclerView.Adapter<AppointmentAdapter.
 
         public MyViewHolder(View view){
             super(view);
-            rName = (TextView) view.findViewById(R.id.rName);
             time = (TextView) view.findViewById(R.id.time);
             date = (TextView) view.findViewById(R.id.date);
             procedure = (TextView) view.findViewById(R.id.procedure);
@@ -42,7 +41,6 @@ public class AppointmentAdapter extends RecyclerView.Adapter<AppointmentAdapter.
     @Override
     public void onBindViewHolder(AppointmentAdapter.MyViewHolder holder, int position) {
         Appointment appointment = appointmentList.get(position);
-        holder.rName.setText(appointment.getrName());
         holder.time.setText(appointment.getTime());
         holder.procedure.setText(appointment.getProcedure());
         holder.date.setText(appointment.getDate());
