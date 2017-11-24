@@ -36,4 +36,8 @@
     <string name="company_address">PK Slaveykov 148, Burgas</string>
     <string name="company_phone">(+359) 87 720 2777</string>
     <string name="company_email">service@yourplace.bg</string>
+
+    <!--About us-->
+    <string name="company_about_us">The concept of our studio is to make you feel luxurious, together with my colleagues Tsveti (manicure and make-up) and Rayna (therapist) of 5 years we have made this happen. Through the years developing, learning and exploring, we realized that we have made Your Place your second home of pleasantries. We invite you to be our guests!"
+</string>
 </resources>
