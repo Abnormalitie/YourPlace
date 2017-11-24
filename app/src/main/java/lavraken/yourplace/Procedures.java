@@ -3,7 +3,7 @@ package lavraken.yourplace;
 /**
  * Created by wishe on 24-Nov-17.
  */
-
+//BRAT
 public class Procedures {
 
     private String name, duration, price;
