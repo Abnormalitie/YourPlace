@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="facial_array">
-        <item>Facial1</item>
-        <item>Facial2</item>
-        <item>Facial3</item>.
+        <item>Facial cleaning</item>
+        <item>Facial massage + mask</item>
+        <item>Facial and neck massage</item>
+        <item>Darsonval</item>
     </string-array>
 </resources>

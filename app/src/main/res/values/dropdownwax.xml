@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="wax_array">
-        <item>Wax1</item>
-        <item>Wax2</item>
-        <item>Wax3</item>.
+        <item>Hands</item>
+        <item>Armpits</item>
+        <item>Belly</item>
+        <item>Legs</item>
+        <item>Back</item>.
+
     </string-array>
 </resources>

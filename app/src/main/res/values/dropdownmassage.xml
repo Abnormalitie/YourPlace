@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="massage_array">
-        <item>Massage1</item>
-        <item>Massage2</item>
-        <item>Massage3</item>
-        <item>Mars</item>
-        <item>Jupiter</item>
-        <item>Saturn</item>
-        <item>Uranus</item>
-        <item>Neptune</item>
+        <item>Partial massage</item>
+        <item>Partial healing massage</item>
+        <item>Classical massage</item>
+        <item>Relaxing partial massage</item>
+        <item>Sport massage</item>
+        <item>"Hot Stone" massage</item>
     </string-array>
 </resources>
