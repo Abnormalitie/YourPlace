@@ -42,6 +42,26 @@ public class FragmentAppointments extends Fragment {
         appointment = new Appointment("12.02", "15:00", "Wax");
         appointmentList.add(appointment);
 
+        appointment = new Appointment("12.02", "15:00", "Wax");
+        appointmentList.add(appointment);
+        appointment = new Appointment("12.02", "15:00", "Wax");
+        appointmentList.add(appointment);
+        appointment = new Appointment("12.02", "15:00", "Wax");
+        appointmentList.add(appointment);
+        appointment = new Appointment("12.02", "15:00", "Wax");
+        appointmentList.add(appointment);
+        appointment = new Appointment("12.02", "15:00", "Wax");
+        appointmentList.add(appointment);
+        appointment = new Appointment("12.02", "15:00", "Wax");
+        appointmentList.add(appointment);
+        appointment = new Appointment("12.02", "15:00", "Wax");
+        appointmentList.add(appointment);
+        appointment = new Appointment("12.02", "15:00", "Wax");
+        appointmentList.add(appointment);
+        appointment = new Appointment("12.02", "15:00", "Wax");
+        appointmentList.add(appointment);
+
+
 
 
 
