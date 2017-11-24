@@ -43,7 +43,6 @@ public class FragmentBook extends Fragment {
     private EditText bookMonthField;
     private EditText bookTimeField;
     private EditText bookNameField;
-    private EditText bookProcedureField;
 
     private ArrayAdapter<CharSequence> catAdapter;
     private ArrayAdapter<CharSequence> procAdapter;
@@ -68,7 +67,6 @@ public class FragmentBook extends Fragment {
         bookMonthField = (EditText) view.findViewById(R.id.bookMonthField);
         bookTimeField = (EditText) view.findViewById(R.id.bookTimeField);
         bookNameField = (EditText) view.findViewById(R.id.bookNameField);
-        bookProcedureField = (EditText) view.findViewById(R.id.bookProcedureField);
         bookPriceView = (TextView) view.findViewById(R.id.bookPriceView);
 
         bookSubmitButton = (Button) view.findViewById(R.id.bookSubmitButton);
@@ -164,7 +162,7 @@ public class FragmentBook extends Fragment {
                 String date = bookDayField.getText()+"-"+bookMonthField.getText();
                 String time = bookTimeField.getText().toString();
                 String name = bookNameField.getText().toString();
-                String procedure = bookProcedureField.getText().toString();
+                String procedure = procedures.getSelectedItem().toString();
 
                 Boolean submitLegit = true;
 
