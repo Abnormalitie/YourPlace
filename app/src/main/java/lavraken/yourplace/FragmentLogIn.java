@@ -104,6 +104,6 @@ public class FragmentLogIn extends Fragment {
             //logInAuth.signInWithEmailAndPassword()
 
 
-                }
+        }
     }
 }
