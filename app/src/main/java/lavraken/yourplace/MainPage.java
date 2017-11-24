@@ -174,6 +174,8 @@ public class MainPage extends AppCompatActivity {
                 case R.id.nav_staff:
                     fragmentClass = FragmentLogIn.class;
                     break;
+                case: R.id.nav_appointments:
+                    fragmentClass = FragmentAppointments.class;
                 default:
                     fragmentClass = FragmentBook.class;
             }
