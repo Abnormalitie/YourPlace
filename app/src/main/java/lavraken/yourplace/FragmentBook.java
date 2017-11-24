@@ -96,16 +96,22 @@ public class FragmentBook extends Fragment {
                             procAdapter = ArrayAdapter.createFromResource(getContext(), R.array.massage_array, android.R.layout.simple_spinner_item);
                             procAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                             procedures.setAdapter(procAdapter);
+                            bookPriceView.setText("   40 bg");
+                            bookDuration.setText("  30min");
                             break;
                         case "Facial":
                             procAdapter = ArrayAdapter.createFromResource(getContext(), R.array.facial_array, android.R.layout.simple_spinner_item);
                             procAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                             procedures.setAdapter(procAdapter);
+                            bookPriceView.setText("    30 bg");
+                            bookDuration.setText("  30min");
                             break;
                         case "Wax":
                             procAdapter = ArrayAdapter.createFromResource(getContext(), R.array.wax_array, android.R.layout.simple_spinner_item);
                             procAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                             procedures.setAdapter(procAdapter);
+                            bookPriceView.setText("    10 bg");
+                            bookDuration.setText("  30min");
                         default:
                             procAdapter = ArrayAdapter.createFromResource(getContext(), R.array.massage_array, android.R.layout.simple_spinner_item);
                             procAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -186,8 +192,7 @@ public class FragmentBook extends Fragment {
                 } else {
 
                 }
-                bookPriceView.setText("    150");
-                bookDuration.setText("  30min");
+
                 mBookingRef.child(date).child(time).setValue(procedure,name);
 
                 //Log.d("TAG", "HEREEEEEEEEEEEEEEEE");
