@@ -15,6 +15,7 @@
     <string name="Price">Price</string>
     <string name="about_us">About us</string>
     <string name="staff">Staff</string>
+    <string name="appointments">Appointments</string>
 
     <!--nav_header strings-->
     <string name="company_name">Your Place</string>

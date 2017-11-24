@@ -1,25 +1,30 @@
 package lavraken.yourplace;
 
+import android.app.NotificationManager;
+import android.content.Context;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.app.NotificationCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class MainPage extends AppCompatActivity {
 
@@ -29,16 +34,29 @@ public class MainPage extends AppCompatActivity {
         private Class fragmentC;
         private Fragment fragment1;
 
-
+        private NotificationCompat.Builder mBuilder;
+        private long warmUpInit;
+        private long warmUpReady;
+        private boolean initLock = true;
 
         private ActionBarDrawerToggle drawerToggle;
 
-
+        DatabaseReference mRootReference = FirebaseDatabase.getInstance().getReference();
+        DatabaseReference mBookingRef = mRootReference.child("User");
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
+
+            warmUpInit = System.nanoTime();
+            warmUpReady = warmUpInit + 2000000000;
+
             setContentView(R.layout.activity_main);
+
+            mBuilder = new NotificationCompat.Builder(this)
+                    .setSmallIcon(R.mipmap.ic_launcher_round)
+                    .setContentTitle("Your Place ♡")
+                    .setContentText("You have new appointent :)");
 
 
             try {
@@ -77,10 +95,38 @@ public class MainPage extends AppCompatActivity {
             setupDrawerContent(nvDrawer);
 
             View headerLayout = nvDrawer.getHeaderView(0);
+        }
 
-                   }
+    @Override
+    protected void onStart() {
+        super.onStart();
 
-        @Override
+        mBookingRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                //dataSnapshot.getValue(String.class);
+
+                if (System.nanoTime() > warmUpReady){
+
+                    NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+                    mNotificationManager.notify(001, mBuilder.build());
+
+                    //dataSnapshot.getValue(String.class);
+                    //Log.v("SOOOOW data", "firebase: "+ dataSnapshot.getValue().toString());
+
+                }
+
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+    @Override
         protected void onPostCreate(Bundle savedInstanceState) {
             super.onPostCreate(savedInstanceState);
             // Sync the toggle state after onRestoreInstanceState has occurred.
@@ -128,6 +174,9 @@ public class MainPage extends AppCompatActivity {
                 case R.id.nav_staff:
                     fragmentClass = FragmentLogIn.class;
                     break;
+                case R.id.nav_appointments:
+                    fragmentClass = FragmentAppointments.class;
+                    break;
                 default:
                     fragmentClass = FragmentBook.class;
             }
@@ -160,8 +209,6 @@ public class MainPage extends AppCompatActivity {
             }
             return super.onOptionsItemSelected(item);
         }
-
-
 }
         /*implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -228,9 +275,7 @@ public class MainPage extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id == R.id.nav_book) {
-
-            Intent i = new Intent(MainPage.this, ProceduresActivity.class);
-            startActivity(i);
+            // Handle the camera action
         } else if (id == R.id.nav_price) {
 
         } else if (id == R.id.nav_contact) {
