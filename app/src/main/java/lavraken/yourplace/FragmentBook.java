@@ -18,6 +18,12 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.app.NotificationManager;
+import android.support.v4.app.NotificationCompat;
+import android.view.View;
+import android.content.Context;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,6 +42,7 @@ public class FragmentBook extends Fragment {
     private EditText bookProcedureField;
 
     private TextView bookPriceView;
+    private boolean initialLock = true;
 
     private Button bookSubmitButton;
 
@@ -47,6 +54,8 @@ public class FragmentBook extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        //boolean initialLock = true;
+
         bookDayField = (EditText) view.findViewById(R.id.bookDayField);
         bookMonthField = (EditText) view.findViewById(R.id.bookMonthField);
         bookTimeField = (EditText) view.findViewById(R.id.bookTimeField);
@@ -56,6 +65,9 @@ public class FragmentBook extends Fragment {
 
         bookSubmitButton = (Button) view.findViewById(R.id.bookSubmitButton);
 
+
+
+
     }
 
     @Override
@@ -63,6 +75,7 @@ public class FragmentBook extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_book, container, false);
+
     }
 
     @Override
@@ -73,8 +86,12 @@ public class FragmentBook extends Fragment {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 //dataSnapshot.getValue(String.class);
-                Log.d("SOOOOW data", dataSnapshot.getValue().toString());
-                Toast.makeText(getActivity(), "booking made succesfully", Toast.LENGTH_LONG).show();
+
+                if (!initialLock){
+                    //Log.v("SOOOOW data", "firebase: "+ dataSnapshot.getValue());
+                    Toast.makeText(getActivity(), "booking made succesfully", Toast.LENGTH_LONG).show();
+                }
+
 
             }
 
@@ -88,6 +105,7 @@ public class FragmentBook extends Fragment {
             @Override
             public void onClick(View view) {
 
+                initialLock = false;
                 String date = bookDayField.getText()+"-"+bookMonthField.getText();
                 String time = bookTimeField.getText().toString();
                 String name = bookNameField.getText().toString();
@@ -151,7 +169,7 @@ public class FragmentBook extends Fragment {
             return false;
         }
 
-        Log.d("HEREEEEEEEEEEEEEEEE", " "+dateDayMonth[0]);
+        //Log.d("HEREEEEEEEEEEEEEEEE", " "+dateDayMonth[0]);
 
         return true;
     }
