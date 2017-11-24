@@ -28,9 +28,7 @@ public class MainPage extends AppCompatActivity {
         private NavigationView nvDrawer;
         private Class fragmentC;
         private Fragment fragment1;
-        private List<Procedures> proceduresList = new ArrayList<>();
-        private RecyclerView recyclerView;
-        private ProcedureAdapter procedureAdapter;
+
 
 
         private ActionBarDrawerToggle drawerToggle;
@@ -41,12 +39,7 @@ public class MainPage extends AppCompatActivity {
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main);
-            recyclerView = (RecyclerView)findViewById(R.id.recycler_view);
-            procedureAdapter = new ProcedureAdapter(proceduresList);
-            RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
-            recyclerView.setLayoutManager(mLayoutManager);
-            recyclerView.setItemAnimator(new DefaultItemAnimator());
-            recyclerView.setAdapter(procedureAdapter);
+
 
             try {
                 fragmentC = FragmentMain.class;
@@ -168,29 +161,7 @@ public class MainPage extends AppCompatActivity {
             return super.onOptionsItemSelected(item);
         }
 
-    private void procedureData() {
-        Procedures procedures = new Procedures("Mad Max: Fury Road", "Action & Adventure", "2015");
-        proceduresList.add(procedures);
 
-        procedures = new Procedures("Mad Max: Fury Road", "Action & Adventure", "2015");
-        proceduresList.add(procedures);
-
-        procedures = new Procedures("Mad Max: Fury Road", "Action & Adventure", "2015");
-        proceduresList.add(procedures);
-
-        procedures = new Procedures("Mad Max: Fury Road", "Action & Adventure", "2015");
-        proceduresList.add(procedures);
-
-        procedures = new Procedures("Mad Max: Fury Road", "Action & Adventure", "2015");
-        proceduresList.add(procedures);
-
-        procedures = new Procedures("Mad Max: Fury Road", "Action & Adventure", "2015");
-        proceduresList.add(procedures);
-
-
-
-        procedureAdapter.notifyDataSetChanged();
-    }
 }
         /*implements NavigationView.OnNavigationItemSelectedListener {
 
