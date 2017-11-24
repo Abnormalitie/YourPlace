@@ -43,13 +43,13 @@ public class FragmentBook extends Fragment {
     private EditText bookMonthField;
     private EditText bookTimeField;
     private EditText bookNameField;
-    private EditText bookDuration;
 
     private ArrayAdapter<CharSequence> catAdapter;
     private ArrayAdapter<CharSequence> procAdapter;
     private Spinner category;
     private Spinner procedures;
     private TextView bookPriceView;
+    private TextView bookDuration;
     private boolean initialLock = true;
 
     private Button bookSubmitButton;
@@ -68,8 +68,8 @@ public class FragmentBook extends Fragment {
         bookMonthField = (EditText) view.findViewById(R.id.bookMonthField);
         bookTimeField = (EditText) view.findViewById(R.id.bookTimeField);
         bookNameField = (EditText) view.findViewById(R.id.bookNameField);
-        bookPriceView = (TextView) view.findViewById(R.id.bookPriceView);
-        //bookDuration = (TextView) view.findViewById(R.id.bookDuration);
+        bookPriceView = (TextView) view.findViewById(R.id.bookPrice);
+        bookDuration = (TextView) view.findViewById(R.id.bookDuration);
 
         bookSubmitButton = (Button) view.findViewById(R.id.bookSubmitButton);
         category = (Spinner) view.findViewById(R.id.categorySpinner);
@@ -187,7 +187,7 @@ public class FragmentBook extends Fragment {
 
                 }
                 bookPriceView.setText("    150");
-                //bookDuration.setText("  30min");
+                bookDuration.setText("  30min");
                 mBookingRef.child(date).child(time).setValue(procedure,name);
 
                 //Log.d("TAG", "HEREEEEEEEEEEEEEEEE");

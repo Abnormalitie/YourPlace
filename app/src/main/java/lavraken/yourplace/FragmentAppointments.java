@@ -20,7 +20,7 @@ public class FragmentAppointments extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_appointments, container, false);
-        RecyclerView recyclerView = (RecyclerView)rootView.findViewById(R.id.);
+        RecyclerView recyclerView = (RecyclerView)rootView.findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
 
