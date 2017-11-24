@@ -31,4 +31,9 @@
     <!--Nav drawer-->
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
+
+    <!--Company stuff-->
+    <string name="company_address">PK Slaveykov 148, Burgas</string>
+    <string name="company_phone">(+359) 87 720 2777</string>
+    <string name="company_email">service@yourplace.bg</string>
 </resources>
