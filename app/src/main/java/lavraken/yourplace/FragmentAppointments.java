@@ -30,10 +30,13 @@ public class FragmentAppointments extends Fragment {
         RecyclerView recyclerView = (RecyclerView)rootView.findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        Appointment appointment = new Appointment("Stuff", "Stuff", "Stuff");
+        Appointment appointment = new Appointment("Mad Max: Fury Road", "Action & Adventure", "2015");
         appointmentList.add(appointment);
 
-        appointment = new Appointment("THIS SHIT", "Better", "123");
+        appointment = new Appointment("Mad Max: Fury Road", "Action & Adventure", "2015");
+        appointmentList.add(appointment);
+
+        appointment = new Appointment("Mad Max: Fury Road", "Action & Adventure", "2015");
         appointmentList.add(appointment);
 
 
