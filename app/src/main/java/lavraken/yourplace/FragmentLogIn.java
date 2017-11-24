@@ -36,10 +36,6 @@ public class FragmentLogIn extends Fragment {
     private Button logInButton;
 
     private FirebaseAuth logInAuth;
-    private View fragment_login;
-
-    DatabaseReference mRootReference = FirebaseDatabase.getInstance().getReference();
-    DatabaseReference mBookingRef = mRootReference.child("User");
 
     private FirebaseAuth.AuthStateListener mAuthListener;
 
@@ -106,4 +102,6 @@ public class FragmentLogIn extends Fragment {
 
         }
     }
+
+
 }
