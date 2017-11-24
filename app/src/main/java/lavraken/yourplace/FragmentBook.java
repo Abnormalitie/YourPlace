@@ -8,9 +8,13 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -41,6 +45,10 @@ public class FragmentBook extends Fragment {
     private EditText bookNameField;
     private EditText bookProcedureField;
 
+    private ArrayAdapter<CharSequence> catAdapter;
+    private ArrayAdapter<CharSequence> procAdapter;
+    private Spinner category;
+    private Spinner procedures;
     private TextView bookPriceView;
     private boolean initialLock = true;
 
@@ -64,11 +72,58 @@ public class FragmentBook extends Fragment {
         bookPriceView = (TextView) view.findViewById(R.id.bookPriceView);
 
         bookSubmitButton = (Button) view.findViewById(R.id.bookSubmitButton);
+        category = (Spinner) view.findViewById(R.id.categorySpinner);
+        procedures = (Spinner) view.findViewById(R.id.procedureSpinner);
 
+        catAdapter = ArrayAdapter.createFromResource(view.getContext(),
+                R.array.category_array, android.R.layout.simple_spinner_item);
+// Specify the layout to use when the list of choices appears
+        catAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+// Apply the adapter to the spinner
+        category.setAdapter(catAdapter);
 
+        category.setOnItemSelectedListener(new OnItemSelectedListener() {
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                int currentItem = -1;
 
+                if(currentItem == i){
+                    return; //do nothing
+                }
+                else
+                {
+                    switch (category.getSelectedItem().toString()) {
+                        case "Massage":
+                            procAdapter = ArrayAdapter.createFromResource(getContext(), R.array.massage_array, android.R.layout.simple_spinner_item);
+                            procAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                            procedures.setAdapter(procAdapter);
+                            break;
+                        case "Facial":
+                            procAdapter = ArrayAdapter.createFromResource(getContext(), R.array.facial_array, android.R.layout.simple_spinner_item);
+                            procAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                            procedures.setAdapter(procAdapter);
+                            break;
+                        case "Wax":
+                            procAdapter = ArrayAdapter.createFromResource(getContext(), R.array.wax_array, android.R.layout.simple_spinner_item);
+                            procAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                            procedures.setAdapter(procAdapter);
+                        default:
+                            procAdapter = ArrayAdapter.createFromResource(getContext(), R.array.massage_array, android.R.layout.simple_spinner_item);
+                            procAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                            procedures.setAdapter(procAdapter);
+                            break;
+                    }
+                }
+                currentItem = i;
+            }
+
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
 
     }
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

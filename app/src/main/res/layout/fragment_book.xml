@@ -3,44 +3,41 @@
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <Spinner
+        android:id="@+id/categorySpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp" />
+
+    <Spinner
+        android:id="@+id/procedureSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/categorySpinner"
+        android:layout_marginTop="13dp" />
+
     <Button
         android:id="@+id/bookSubmitButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="95dp"
         android:text="Submit" />
 
     <EditText
         android:id="@+id/bookNameField"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/bookProcedureField"
+        android:layout_above="@+id/bookSubmitButton"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="18dp"
+        android:layout_marginBottom="27dp"
         android:ems="10"
-        android:inputType="text|textPersonName"
-        android:hint="Resevation Name" />
-
-    <EditText
-        android:id="@+id/bookProcedureField"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/bookNameField"
-        android:layout_centerVertical="true"
-        android:ems="10"
-        android:inputType="text|textPersonName"
-        android:text="Procedure" />
-
-    <TextView
-        android:id="@+id/bookPriceView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/bookProcedureField"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="39dp"
-        android:text="Price" />
+        android:hint="Resevation Name"
+        android:inputType="text|textPersonName" />
 
     <EditText
         android:id="@+id/bookTimeField"
@@ -48,6 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/bookNameField"
         android:layout_alignParentStart="true"
+        android:layout_marginBottom="12dp"
         android:ems="10"
         android:hint="Time"
         android:inputType="time" />
@@ -68,10 +66,47 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/bookMonthField"
-        android:layout_alignEnd="@+id/bookMonthField"
-        android:layout_marginBottom="16dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="13dp"
         android:ems="10"
         android:hint="Day"
         android:inputType="number" />
+
+    <TextView
+        android:id="@+id/bookPriceView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/procedureSpinner"
+        android:layout_marginTop="24dp"
+        android:text="Price" />
+
+    <TextView
+        android:id="@+id/bookPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/bookPriceView"
+        android:layout_marginStart="18dp"
+        android:layout_toEndOf="@+id/bookPriceView"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/bookDurationView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/bookPriceView"
+        android:layout_marginTop="13dp"
+        android:text="Duration" />
+
+    <TextView
+        android:id="@+id/bookDuration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/bookDurationView"
+        android:layout_alignBottom="@+id/bookDurationView"
+        android:layout_marginStart="15dp"
+        android:layout_toEndOf="@+id/bookDurationView"
+        android:text="TextView" />
 
 </RelativeLayout>
