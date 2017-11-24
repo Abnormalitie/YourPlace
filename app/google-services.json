@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "35724727239",
+    "firebase_url": "https://yourplace-6f209.firebaseio.com",
+    "project_id": "yourplace-6f209",
+    "storage_bucket": "yourplace-6f209.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:35724727239:android:1503252dc49ac0fe",
+        "android_client_info": {
+          "package_name": "lavraken.yourplace"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "35724727239-62t0f1dup5kjfuebuoj90vhg452mqps4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "lavraken.yourplace",
+            "certificate_hash": "66c5e905bff9f6a4f8b0051c49caca408a832e33"
+          }
+        },
+        {
+          "client_id": "35724727239-68lideqpclsh21mr0keatqfb9cqqf5fv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFloTMsfhqVEJa-6ZpFUPw5OmKhdLwanw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "35724727239-68lideqpclsh21mr0keatqfb9cqqf5fv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
