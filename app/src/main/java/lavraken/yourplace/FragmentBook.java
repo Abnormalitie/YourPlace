@@ -183,14 +183,8 @@ public class FragmentBook extends Fragment {
 
                 } else {
 
-
-
-
-                    //logInAuth.signInWithEmailAndPassword()
-
-
                 }
-
+                bookPriceView.setText("150");
                 mBookingRef.child(date).child(time).setValue(procedure,name);
 
                 //Log.d("TAG", "HEREEEEEEEEEEEEEEEE");
