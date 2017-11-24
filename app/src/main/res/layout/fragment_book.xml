@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="95dp"
+        android:layout_marginBottom="51dp"
         android:text="Submit" />
 
     <EditText
@@ -67,7 +67,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/bookMonthField"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="13dp"
+        android:layout_marginBottom="12dp"
         android:ems="10"
         android:hint="Day"
         android:inputType="number" />
