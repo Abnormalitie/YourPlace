@@ -9,9 +9,15 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainPage extends AppCompatActivity {
 
@@ -20,13 +26,25 @@ public class MainPage extends AppCompatActivity {
         private NavigationView nvDrawer;
         private Class fragmentC;
         private Fragment fragment1;
+        private List<Procedures> proceduresList = new ArrayList<>();
+        private RecyclerView recyclerView;
+        private ProcedureAdapter procedureAdapter;
+
 
         private ActionBarDrawerToggle drawerToggle;
+
+
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main);
+            recyclerView = (RecyclerView)findViewById(R.id.recycler_view);
+            procedureAdapter = new ProcedureAdapter(proceduresList);
+            RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
+            recyclerView.setLayoutManager(mLayoutManager);
+            recyclerView.setItemAnimator(new DefaultItemAnimator());
+            recyclerView.setAdapter(procedureAdapter);
 
             try {
                 fragmentC = FragmentMain.class;
@@ -64,7 +82,8 @@ public class MainPage extends AppCompatActivity {
             setupDrawerContent(nvDrawer);
 
             View headerLayout = nvDrawer.getHeaderView(0);
-        }
+
+                   }
 
         @Override
         protected void onPostCreate(Bundle savedInstanceState) {
@@ -146,6 +165,30 @@ public class MainPage extends AppCompatActivity {
             }
             return super.onOptionsItemSelected(item);
         }
+
+    private void procedureData() {
+        Procedures procedures = new Procedures("Mad Max: Fury Road", "Action & Adventure", "2015");
+        proceduresList.add(procedures);
+
+        procedures = new Procedures("Mad Max: Fury Road", "Action & Adventure", "2015");
+        proceduresList.add(procedures);
+
+        procedures = new Procedures("Mad Max: Fury Road", "Action & Adventure", "2015");
+        proceduresList.add(procedures);
+
+        procedures = new Procedures("Mad Max: Fury Road", "Action & Adventure", "2015");
+        proceduresList.add(procedures);
+
+        procedures = new Procedures("Mad Max: Fury Road", "Action & Adventure", "2015");
+        proceduresList.add(procedures);
+
+        procedures = new Procedures("Mad Max: Fury Road", "Action & Adventure", "2015");
+        proceduresList.add(procedures);
+
+
+
+        procedureAdapter.notifyDataSetChanged();
+    }
 }
         /*implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -212,7 +255,9 @@ public class MainPage extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id == R.id.nav_book) {
-            // Handle the camera action
+
+            Intent i = new Intent(MainPage.this, ProceduresActivity.class);
+            startActivity(i);
         } else if (id == R.id.nav_price) {
 
         } else if (id == R.id.nav_contact) {
